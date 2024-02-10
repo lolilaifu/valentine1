@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Be My Valentine?</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+  }
+  #container {
+    margin-top: 20vh;
+  }
+  #question {
+    font-size: 36px;
+    color: pink;
+    margin-bottom: 20px;
+  }
+  .button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+    border-radius: 5px;
+  }
+  #yes {
+    background-color: red;
+    color: white;
+  }
+  #no {
+    background-color: #ff8080;
+    color: white;
+  }
+  #message {
+    display: none;
+    margin-top: 50px;
+    font-size: 24px;
+  }
+  #valentine-image {
+    display: none;
+    margin-top: 50px;
+    max-width: 80%;
+  }
+</style>
+</head>
+<body>
+
+<div id="container">
+  <div id="question">Will you be my Valentine?</div>
+  <button id="yes" class="button" onclick="showMessage('yes')">Yes</button>
+  <button id="no" class="button" onclick="showMessage('no')">No</button>
+  <div id="message"></div>
+  <img id="valentine-image" src="https://drive.google.com/uc?export=view&id=1Q_oR3o0rbbAm1QJtoKpzxvznluzCKVuw">
+</div>
+
+<script>
+  function showMessage(choice) {
+    if (choice === 'yes') {
+      document.getElementById("message").innerHTML = "<p>Thank you for being my girlfriend!</p>";
+      document.getElementById("message").style.display = "block";
+      document.getElementById("valentine-image").style.display = "block";
+      document.getElementById("yes").style.display = "none";
+      document.getElementById("no").style.display = "none";
+    } else {
+      alert("You have no other option, please select 'Yes' :)");
+    }
+  }
+</script>
+
+</body>
+</html>
