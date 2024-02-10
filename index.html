@@ -41,11 +41,12 @@
   }
   #valentine-image {
     display: none;
-    margin-top: 50px;
-    max-width: 80%;
-    width: 300px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 auto; /* Center the image horizontally */
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    max-width: 100px;
+    height: auto;
+    cursor: pointer;
   }
 </style>
 </head>
@@ -56,7 +57,6 @@
   <button id="yes" class="button" onclick="showMessage('yes')">Yes</button>
   <button id="no" class="button" onclick="showMessage('no')">No</button>
   <div id="message"></div>
-  <img id="valentine-image" src="kitten-flower.jpg" alt="Valentine's Day">
 </div>
 
 <script>
@@ -71,6 +71,28 @@
       alert("You have no other option, please select 'Yes' :)");
     }
   }
+
+  function showFroggie() {
+    var froggieImage = document.createElement("img");
+    froggieImage.src = "froggie.png";
+    froggieImage.id = "froggie-image";
+    froggieImage.style.position = "fixed";
+    froggieImage.style.bottom = "10px";
+    froggieImage.style.right = "10px";
+    froggieImage.style.maxWidth = "100px";
+    froggieImage.style.height = "auto";
+    froggieImage.style.cursor = "pointer";
+    froggieImage.onclick = function() {
+      window.location.href = "https://www.youtube.com/watch?v=iggmiF7DNoM";
+    };
+    document.body.appendChild(froggieImage);
+    setTimeout(function() {
+      var element = document.getElementById("froggie-image");
+      element.parentNode.removeChild(element);
+    }, 3000);
+  }
+
+  setInterval(showFroggie, 5000);
 </script>
 
 </body>
