@@ -106,7 +106,9 @@
       document.getElementById("yes").style.display = "none";
       document.getElementById("no").style.display = "none";
       var yippeeAudio = document.getElementById("yippee");
+      console.log("yippeeAudio:", yippeeAudio); // Debugging statement
       yippeeAudio.play(); // Play the "yippee" sound
+      console.log("yippeeAudio played"); // Debugging statement
       showYuji(); // Call the function to show Yuji image
     } else {
       alert("You have no other option, please select 'Yes' :)");
