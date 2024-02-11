@@ -59,10 +59,18 @@
   }
   #yuji-image {
     position: fixed;
-    top: 50px; /* Adjust this value to position the image lower or higher */
+    top: 10px;
     left: 10px;
     max-width: 100px;
     height: auto;
+  }
+  #froggie-image {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    max-width: 100px;
+    height: auto;
+    cursor: pointer;
   }
 </style>
 </head>
@@ -100,6 +108,7 @@
       yippeeAudio.addEventListener('canplaythrough', function() {
         yippeeAudio.play();
       });
+      showYuji(); // Call the function to show Yuji image
     } else {
       alert("You have no other option, please select 'Yes' :)");
       var audio = document.getElementById("wompwomp");
@@ -136,7 +145,19 @@
     }, 3000);
   }
 
-  setInterval(showFroggie, 5000);
+  function showYuji() {
+    var yujiImage = document.createElement("img");
+    yujiImage.src = "yuji.png";
+    yujiImage.id = "yuji-image";
+    yujiImage.style.position = "fixed";
+    yujiImage.style.top = "10px";
+    yujiImage.style.left = "10px";
+    yujiImage.style.maxWidth = "100px";
+    yujiImage.style.height = "auto";
+    document.body.appendChild(yujiImage);
+  }
+
+  setInterval(showFroggie, 5000); // Call showFroggie function repeatedly
 </script>
 
 </body>
