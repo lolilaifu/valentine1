@@ -42,11 +42,11 @@
   #valentine-image {
     display: none;
     position: fixed;
-    bottom: 10px;
-    right: 10px;
-    max-width: 100px;
-    height: auto;
-    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    max-height: 80%;
   }
 </style>
 </head>
@@ -62,6 +62,7 @@
   <button id="yes" class="button" onclick="showMessage('yes')">Yes</button>
   <button id="no" class="button" onclick="showMessage('no')">No</button>
   <div id="message"></div>
+  <img id="sad-kitten" src="sadkitten.png" alt="Sad Kitten">
 </div>
 
 <script>
@@ -76,6 +77,11 @@
       alert("You have no other option, please select 'Yes' :)");
       var audio = document.getElementById("wompwomp");
       audio.play();
+      var sadKittenImage = document.getElementById("sad-kitten");
+      sadKittenImage.style.display = "block";
+      setTimeout(function() {
+        sadKittenImage.style.display = "none";
+      }, 2000);
     }
   }
 
