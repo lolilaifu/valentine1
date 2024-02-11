@@ -59,19 +59,10 @@
   }
   #yuji-image {
     position: fixed;
-    top: 10px;
+    top: 50px; /* Adjust this value to position the image lower or higher */
     left: 10px;
     max-width: 100px;
     height: auto;
-    cursor: pointer;
-  }
-  #froggie-image {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    max-width: 100px;
-    height: auto;
-    cursor: pointer;
   }
 </style>
 </head>
@@ -95,7 +86,7 @@
 </div>
 
 <img id="sad-kitten" src="sadkitten.png" alt="Sad Kitten">
-<img id="yuji-image" src="yuji.png" alt="Yuji Image" onclick="redirectToYouTube()">
+<img id="yuji-image" src="yuji.png" alt="Yuji Image">
 
 <script>
   function showMessage(choice) {
@@ -109,7 +100,6 @@
       yippeeAudio.addEventListener('canplaythrough', function() {
         yippeeAudio.play();
       });
-      showYuji(); // Call the function to show Yuji image
     } else {
       alert("You have no other option, please select 'Yes' :)");
       var audio = document.getElementById("wompwomp");
@@ -123,7 +113,7 @@
   }
 
   function redirectToYouTube() {
-    window.open("https://www.youtube.com/watch?v=DeumyOzKqgI");
+    window.location.href = "https://www.youtube.com/watch?v=DeumyOzKqgI";
   }
 
   function showFroggie() {
@@ -137,7 +127,7 @@
     froggieImage.style.height = "auto";
     froggieImage.style.cursor = "pointer";
     froggieImage.onclick = function() {
-      window.location.href = "https://www.youtube.com/watch?v=6kiYXT8frBo";
+      window.location.href = "https://www.youtube.com/watch?v=iggmiF7DNoM";
     };
     document.body.appendChild(froggieImage);
     setTimeout(function() {
@@ -146,21 +136,7 @@
     }, 3000);
   }
 
-  function showYuji() {
-    var yujiImage = document.createElement("img");
-    yujiImage.src = "yuji.png";
-    yujiImage.id = "yuji-image";
-    yujiImage.style.position = "fixed";
-    yujiImage.style.top = "10px";
-    yujiImage.style.left = "10px";
-    yujiImage.style.maxWidth = "100px";
-    yujiImage.style.height = "auto";
-    yujiImage.onclick = function() {
-      window.location.href = "https://www.youtube.com/watch?v=DeumyOzKqgI";
-    document.body.appendChild(yujiImage);
-  }
-
-  setInterval(showFroggie, 5000); // Call showFroggie function repeatedly
+  setInterval(showFroggie, 5000);
 </script>
 
 </body>
