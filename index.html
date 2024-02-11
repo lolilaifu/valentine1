@@ -52,6 +52,11 @@
 </head>
 <body>
 
+<audio id="wompwomp">
+  <source src="wompwomp.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
 <div id="container">
   <div id="question">Will you be my Valentine?</div>
   <button id="yes" class="button" onclick="showMessage('yes')">Yes</button>
@@ -69,6 +74,8 @@
       document.getElementById("no").style.display = "none";
     } else {
       alert("You have no other option, please select 'Yes' :)");
+      var audio = document.getElementById("wompwomp");
+      audio.play();
     }
   }
 
