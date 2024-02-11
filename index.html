@@ -49,7 +49,7 @@
     max-height: 80%;
   }
   #sad-kitten {
-    display: none; /* Initially hide the sad kitten image */
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -66,6 +66,11 @@
   Your browser does not support the audio element.
 </audio>
 
+<audio id="yippee">
+  <source src="yippee.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
 <div id="container">
   <div id="question">Will you be my Valentine?</div>
   <button id="yes" class="button" onclick="showMessage('yes')">Yes</button>
@@ -73,7 +78,7 @@
   <div id="message"></div>
 </div>
 
-<img id="sad-kitten" src="sadkitten.png" alt="Sad Kitten"> <!-- Image element moved outside the container -->
+<img id="sad-kitten" src="sadkitten.png" alt="Sad Kitten">
 
 <script>
   function showMessage(choice) {
@@ -83,14 +88,16 @@
       document.getElementById("valentine-image").style.display = "block";
       document.getElementById("yes").style.display = "none";
       document.getElementById("no").style.display = "none";
+      var yippeeAudio = document.getElementById("yippee");
+      yippeeAudio.play();
     } else {
       alert("You have no other option, please select 'Yes' :)");
       var audio = document.getElementById("wompwomp");
       audio.play();
       var sadKittenImage = document.getElementById("sad-kitten");
-      sadKittenImage.style.display = "block"; // Show the sad kitten image
+      sadKittenImage.style.display = "block";
       setTimeout(function() {
-        sadKittenImage.style.display = "none"; // Hide the sad kitten image after 2 seconds
+        sadKittenImage.style.display = "none";
       }, 2000);
     }
   }
