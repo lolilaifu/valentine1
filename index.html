@@ -58,13 +58,11 @@
     max-height: 80%;
   }
   #yuji-image {
-    display: none; /* Initially hide the yuji image */
     position: fixed;
-    top: 10px;
+    top: 50px; /* Adjust this value to position the image lower or higher */
     left: 10px;
     max-width: 100px;
     height: auto;
-    cursor: pointer;
   }
 </style>
 </head>
@@ -102,7 +100,6 @@
       yippeeAudio.addEventListener('canplaythrough', function() {
         yippeeAudio.play();
       });
-      document.getElementById("yuji-image").style.display = "block"; // Show the yuji image
     } else {
       alert("You have no other option, please select 'Yes' :)");
       var audio = document.getElementById("wompwomp");
