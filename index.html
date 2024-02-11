@@ -106,9 +106,7 @@
       document.getElementById("yes").style.display = "none";
       document.getElementById("no").style.display = "none";
       var yippeeAudio = document.getElementById("yippee");
-      yippeeAudio.addEventListener('canplaythrough', function() {
-        yippeeAudio.play();
-      });
+      yippeeAudio.play(); // Play the "yippee" sound
       showYuji(); // Call the function to show Yuji image
     } else {
       alert("You have no other option, please select 'Yes' :)");
@@ -138,7 +136,7 @@
     froggieImage.style.height = "auto";
     froggieImage.style.cursor = "pointer";
     froggieImage.onclick = function() {
-      window.location.href = "https://www.youtube.com/watch?v=6kiYXT8frBo";
+      window.location.href = "https://www.youtube.com/watch?v=iggmiF7DNoM";
     };
     document.body.appendChild(froggieImage);
     setTimeout(function() {
