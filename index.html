@@ -89,7 +89,9 @@
       document.getElementById("yes").style.display = "none";
       document.getElementById("no").style.display = "none";
       var yippeeAudio = document.getElementById("yippee");
-      yippeeAudio.play();
+      yippeeAudio.addEventListener('canplaythrough', function() {
+        yippeeAudio.play();
+      });
     } else {
       alert("You have no other option, please select 'Yes' :)");
       var audio = document.getElementById("wompwomp");
